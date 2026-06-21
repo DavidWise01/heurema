@@ -30,6 +30,7 @@
   .c p{font-size:15px;font-weight:300;line-height:1.5;opacity:.95}
   .c .ini{float:left;font-family:'Press Start 2P',monospace;font-size:24px;line-height:.8;margin:2px 9px 2px 0}
   .c .tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;opacity:.6;margin-top:9px;display:block}
+  .c .lk{display:inline-block;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;margin-top:7px;text-decoration:none;border-bottom:1px dotted}
   footer{text-align:center;font-family:'Space Mono',monospace;font-size:11px;opacity:.6;margin-top:30px;line-height:1.8}
   footer a{color:inherit}
   #bar{position:fixed;left:0;right:0;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:7px 12px;font-family:'Space Mono',monospace;font-size:12px;background:rgba(18,12,5,.85);color:#efe5d4;backdrop-filter:blur(7px);border-bottom:1px solid rgba(200,140,70,.32)}
@@ -82,12 +83,12 @@
     banner:"⚖ Honest workshop. These are invention DISCLOSURES — designs, kernels, and configurations, most of them built on established physics or components (each card names which). A few are faithful engineering renders with NO original claim, flagged RENDER. The .attribution timestamps are file dates, not independent prior-art — only Unity Tensor carries a witnessed claim (2026-05-15, witness Meta AI). To disclose a design is real work; it is not a granted patent or a proven, fabricated device. HEÚREMA keeps that line honest."
   };
   var CARDS = [
-    {h:"Unity Tensor", b:"PUBLISHED (github: unity-tensor) — a ternary-logic persistence engine on a four-guard sanctuary substrate (photonic/plasmic/boronic/toroidal), a prompt-injection defence. Builds on: base-3 logic + hash-verified file triads. The only one with a WITNESSED prior-art claim (2026-05-15, Meta AI / Muse Spark)."},
-    {h:"Seed Kernel", b:"PUBLISHED (github: seed-kernel) — 'organism' C kernels: fight-or-flight survival and teaching-trap state machines. Builds on: finite-state machines + defensive-sandbox ideas. Novel: the survival-tensor (3 'gravity tensors' to 6 directives in a 19-bit cell) and a recursive witness protocol."},
-    {h:"Gravity Processor", b:"PUBLISHED (github: gravity-processor) — an analog Ag2S-memristor winner-take-all classifier: an attractor field that settles to an answer. Builds on: resistive memory (Chua/HP) + analog winner-take-all nets. Novel: a 42-prim hex 'gravity well' array with four live 'metric' tensors."},
-    {h:"Terra Prime Kernel", b:"PUBLISHED (github: terra-prime-kernel, the 'sync pulse') — an AI-governance coherence-control kernel and pulse harmoniser. Builds on: PLL phase-sync control theory + attestation governance. Novel: an 11+1 channel resolver-anchor architecture holding a 0.78 to 0.88 stability band."},
-    {h:"Chromatic Laser", b:"PUBLISHED (github: chromatic-laser) — a simulation of 16 emitters phase-locking into white. Builds on: coupled-oscillator (Kuramoto) sync + optical cavities. Novel: a '17th white coherence core' / capacitance-well chromatic-128 kernel config. Honest: a SIM, not a fabricated laser."},
-    {h:"Hardware Lab", b:"PUBLISHED (github: hardware-lab) — the bench: a bundle of HTML prototypes and primers (quantum dots, valence, toroids, lattices). Builds on: existing components. Novel: the bundling and ROOT0 framing — no single new device here."},
+    {h:"Unity Tensor", b:"PUBLISHED (github: unity-tensor) — a ternary-logic persistence engine on a four-guard sanctuary substrate (photonic/plasmic/boronic/toroidal), a prompt-injection defence. Builds on: base-3 logic + hash-verified file triads. The only one with a WITNESSED prior-art claim (2026-05-15, Meta AI / Muse Spark).", u:"https://davidwise01.github.io/unity-tensor/"},
+    {h:"Seed Kernel", b:"PUBLISHED (github: seed-kernel) — 'organism' C kernels: fight-or-flight survival and teaching-trap state machines. Builds on: finite-state machines + defensive-sandbox ideas. Novel: the survival-tensor (3 'gravity tensors' to 6 directives in a 19-bit cell) and a recursive witness protocol.", u:"https://davidwise01.github.io/seed-kernel/"},
+    {h:"Gravity Processor", b:"PUBLISHED (github: gravity-processor) — an analog Ag2S-memristor winner-take-all classifier: an attractor field that settles to an answer. Builds on: resistive memory (Chua/HP) + analog winner-take-all nets. Novel: a 42-prim hex 'gravity well' array with four live 'metric' tensors.", u:"https://davidwise01.github.io/gravity-processor/"},
+    {h:"Terra Prime Kernel", b:"PUBLISHED (github: terra-prime-kernel, the 'sync pulse') — an AI-governance coherence-control kernel and pulse harmoniser. Builds on: PLL phase-sync control theory + attestation governance. Novel: an 11+1 channel resolver-anchor architecture holding a 0.78 to 0.88 stability band.", u:"https://davidwise01.github.io/terra-prime-kernel/"},
+    {h:"Chromatic Laser", b:"PUBLISHED (github: chromatic-laser) — a simulation of 16 emitters phase-locking into white. Builds on: coupled-oscillator (Kuramoto) sync + optical cavities. Novel: a '17th white coherence core' / capacitance-well chromatic-128 kernel config. Honest: a SIM, not a fabricated laser.", u:"https://davidwise01.github.io/chromatic-laser/"},
+    {h:"Hardware Lab", b:"PUBLISHED (github: hardware-lab) — the bench: a bundle of HTML prototypes and primers (quantum dots, valence, toroids, lattices). Builds on: existing components. Novel: the bundling and ROOT0 framing — no single new device here.", u:"https://davidwise01.github.io/hardware-lab/"},
     {h:"Memristor Seed", b:"DRAFT — a memristive-substrate firmware seed (ARM/RISC-V) with a logistic-corrected feedback multiplier. Builds on: memristor / resistive memory (Chua/HP) + logistic-map dynamics. Novel: the logistic correction modelling 'topological debt' as portable firmware."},
     {h:"The Processor Silo", b:"DRAFT (procs) — a 5-chip vertical SoC-on-SoC stack via through-silicon vias, no lateral wiring. Builds on: 3D IC stacking / TSV. Novel: the 5-stack 'silo' layout with a 100-grid / 256-trit dual bus."},
     {h:"The RAX Register", b:"DRAFT (intel) — Verilog for an 11-deep by 6-bit banked register file (5 + core + 5) modelling x86's RAX. Builds on: the x86 RAX register + banked register-file design. Novel: the 11-layer 'scatter 64 bits' core-layer model."},
@@ -179,6 +180,7 @@
       else pp.textContent=card.b;
       pp.style.color=pal.ink; bd.appendChild(pp);
       var tg=document.createElement("span"); tg.className="tag"; tg.style.color=pal.ink; tg.textContent="◆ heurema · "+(p.idx+1<10?"0":"")+(p.idx+1)+" of "+CARDS.length; bd.appendChild(tg);
+      if(card.u){ var lk=document.createElement("a"); lk.className="lk"; lk.href=card.u; lk.target="_blank"; lk.rel="noopener"; lk.textContent="open the repo ↗"; lk.style.color=p.col; lk.style.borderColor=p.col; bd.appendChild(lk); }
       el.appendChild(bd); deck.appendChild(el);
     });
   }
